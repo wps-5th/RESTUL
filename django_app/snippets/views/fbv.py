@@ -29,7 +29,7 @@ def snippet_list(request):
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
 
-
+@csrf_exempt
 def snippet_detail(request, pk):
     try:
         snippet = Snippet.objects.get(pk=pk)
